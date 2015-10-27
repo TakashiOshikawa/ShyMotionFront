@@ -1,0 +1,34 @@
+doctype html
+html
+  head
+    meta(charset="utf-8")
+    title ShyMotion
+    link(rel="stylesheet" type="text/css" href="./top_assets/css/bootstrap/css/bootstrap.css")
+    link(rel="stylesheet" type="text/css" href="./top_assets/css/main.css")
+    link(href='https://fonts.googleapis.com/css?family=Roboto:300' rel='stylesheet' type='text/css')
+    link(href='https://fonts.googleapis.com/css?family=Fredoka+One' rel='stylesheet' type='text/css')
+    script(type="application/javascript" src="./top_assets/js/superagent.js")
+    script(type="application/javascript" src="./top_assets/js/main.js")
+  body
+    div.container
+      a.font-white(href="http://127.0.0.1:4000")
+        h1.shymotion-title(align="center") Shy Motion
+      div.row.main-message-margin
+        span.span-font-size.col-md-offset-4 ちょっとした恥ずかしがり屋さん
+        br
+        span.span-font-size.col-md-offset-4 の代わりにボクがメッセージを
+        br
+        span.span-font-size.col-md-offset-4 伝えるよ!
+        h2.margin-top-80.col-md-offset-4.font-size-40-per 君もツイートしてみよう
+      div.row
+        form#tweet_form.col-lg-offset-3.col-md-6.col-sm-12.col-xs-12
+          div.row.form-group
+            input#twitter_user_id.form-control.margin-6.big-input(type="text" placeholder="@ツイートしたい相手のID" name="user_id")
+            textarea#tweet_body.form-control.margin-top-60.big-textarea(name="body" placeholder="メッセージを入力してね")
+            a.col-xs-5.btn.big-btn.margin-top-40.shy-btn(href="http://localhost:4000/search_top")
+              label.font-white ツイートを探す
+            input.col-xs-offset-2.col-xs-5.btn.big-btn.margin-top-40.shy-btn(type="button" onclick="postTweet(); return false;" value="ツイート" )
+    script(type="application/javascript" src="./vue/src/vue.min.js")
+    script(type="application/javascript" src="./vue/src/js/data_test.js")
+    script(type="application/javascript" src="./top_assets/css/bootstrap/js/jquery-1.10.2.min.js")
+    script(type="application/javascript" src="./top_assets/css/bootstrap/js/bootstrap.js")

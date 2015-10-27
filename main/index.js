@@ -18,9 +18,9 @@ app.set('views', __dirname);
 app.set('view engine', 'jade');
 app.enable('strict routing');
 
-// load examples
+// load main
 
-var examples = fs.readdirSync(__dirname).filter(function(file){
+var main = fs.readdirSync(__dirname).filter(function(file){
   return fs.statSync(__dirname + '/' + file).isDirectory();
 });
 
@@ -43,29 +43,29 @@ app.get(/^\/(mocha|chai)\.(css|js)$/i, function(req, res){
 });
 
 /**
- * GET list of examples.
+ * GET list of main.
  */
 
 app.get('/', function(req, res){
-  res.render('list', { examples: examples });
+  res.render('top', { main: main });
 });
 
 /**
- * GET /:example -> /:example/
+ * GET /:main -> /:main/
  */
 
-app.get('/:example', function(req, res){
-  res.redirect('/' + req.params.example + '/');
+app.get('/:main', function(req, res){
+  res.redirect('/' + req.params.main + '/');
 });
 
 /**
- * GET /:example/* as a file if it exists.
+ * GET /:main/* as a file if it exists.
  */
 
-app.get('/:example/:file(*)', function(req, res, next){
+app.get('/:main/:file(*)', function(req, res, next){
   var file = req.params.file;
   if (!file) return next();
-  var name = req.params.example;
+  var name = req.params.main;
   var path = join(__dirname, name, file);
   fs.stat(path, function(err, stat){
     if (err) return next();
@@ -74,13 +74,14 @@ app.get('/:example/:file(*)', function(req, res, next){
 });
 
 /**
- * GET /:example/* as index.html
+ * GET /:main/* as index.html
  */
 
-app.get('/:example/*', function(req, res){
-  var name = req.params.example;
-  res.sendFile(join(__dirname, name, 'index.html'));
+app.get('/:main/*', function(req, res){
+  var name = req.params.main;
+  // res.sendFile(join(__dirname, name, 'index.jade'));
+  res.render(name, { name: 'index.jade' });
 });
 
 app.listen(4000);
-console.log('Example server listening on port 4000');
+console.log('main server listening on port 4000');

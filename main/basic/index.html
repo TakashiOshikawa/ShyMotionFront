@@ -16,6 +16,13 @@
       <li><a href="./contact/me">/contact/me</a></li>
       <li><a href="./not-found?foo=bar">/not-found</a></li>
     </ul>
+    
+    <form id="tweet_form">
+        <p>
+            <input type="text" v-model="msg">
+            {{msg}}
+        </p>
+    </form>
 
     <script>
       // the "notfound" implements a catch-all
@@ -47,5 +54,9 @@
           .textContent = 'viewing contact ' + (ctx.params.contactName || '');
       }
     </script>
+    
+    <script type="application/javascript" src="../vue/src/vue.min.js" ></script>
+    <script type="application/javascript" src="../vue/src/js/data_test.js" ></script>
+    
   </body>
 </html>

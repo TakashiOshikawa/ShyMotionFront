@@ -1,0 +1,168 @@
+
+/* PC用 */
+@media (max-width: 6000px) {
+  .shymotion-title {
+    font-family: 'Fredoka One', cursive;
+    font-size: 60px;
+    margin-top: 50px;
+    margin-bottom: 30px;
+    text-shadow: 2px 2px #88AAFF;
+  }
+  
+  .span-font-size {
+    font-size: 20px;
+  }
+  
+  .main-message-margin {
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+  
+  .margin-top-40 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+  }
+  
+  .margin-top-60 {
+    margin-top: 30px;
+    margin-bottom: 10px;
+  }
+  
+  .big-input {
+    border-radius: 8px;
+  }
+  
+  .big-textarea {
+    border-radius: 8px;
+  }
+  
+  .big-btn {
+    border-radius: 8px;
+  }
+  
+  .shy-btn {
+    background-color: #81D4FA;
+    color: #FFF;
+    border-color: #FFF;
+    border-width: 2px;
+  }
+  
+  .shy-btn:hover {
+    background-color: #70C3E9;
+    color: #FFF;
+    border-color: #FFF;
+    border-width: 1px;
+  }
+}
+
+/* iPhone6用 start */
+@media (max-width: 1000px) {
+  .shymotion-title {
+    font-family: 'Fredoka One', cursive;
+    font-size: 120px;
+    margin-top: 170px;
+    margin-bottom: 30px;
+  }
+  .span-font-size {
+    font-size: 40px;
+  }
+  
+  .main-message-margin {
+    margin-top: 80px;
+    margin-bottom: 80px;
+  }
+  
+  .margin-top-40 {
+    margin-top: 40px;
+    margin-bottom: 10px;
+  }
+  
+  .margin-top-60 {
+    margin-top: 60px;
+    margin-bottom: 10px;
+  }
+  
+  .margin-top-80 {
+    margin-top: 80px;
+    margin-bottom: 10px;
+  }
+  
+  .font-size-40-per {
+    font-size: 60px;
+  }
+  
+  .big-input {
+    height: 80px;
+    font-size: 40px;
+    border-radius: 20px;
+  }
+  
+  .big-textarea {
+    font-size: 40px;
+    border-radius: 20px;
+  }
+  
+  .big-btn {
+    height: 80px;
+    font-size: 40px;
+    border-radius: 20px;
+  }
+  
+  .shy-btn {
+    background-color: #81D4FA;
+    color: #FFF;
+    border-color: #FFF;
+    border-width: 3px;
+    font-weight: bold;
+  }
+  
+  .shy-btn:active {
+    background-color: #70C3E9;
+    color: #FFF;
+    border-color: #FFF;
+    border-width: 2px;
+  }
+}
+/* iPhone6用 end */
+
+
+/* 共通 */
+body {
+  background-color: #81D4FA;
+  color: #FFF;
+  /*background-color: #f5f8fa;*/
+  font-family: 'Roboto', sans-serif;
+}
+
+.center {
+  text-align: center;
+}
+
+.font-white {
+  color: #FFF;
+}
+
+.margin-6 {
+  margin-top: 6px;
+  margin-bottom: 6px;
+}
+
+.margin-10 {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.margin-20 {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.margin-25 {
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
+.margin-120 {
+  margin-top: 120px;
+  margin-bottom: 120px;
+}
