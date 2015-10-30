@@ -30,8 +30,28 @@
     font-weight: right;
     margin-left: 10px;
   }
+  
+  .blockquote.reply_card {
+    display: inline-block;
+    padding: 12px;
+    /*max-width: 468px;*/
+    border: #ddd 1px solid;
+    border-top-color: #eee;
+    border-bottom-color: #bbb;
+    border-radius: 7px;
+    background-color: #FFF;
+    /*box-shadow: 7px 7px #444;*/
+    color: #666;
+    font-size: 27px;
+  }
+  
+  .reply_margin {
+    margin-top: 10px;
+  }
 
 }
+
+
 
 /* iPhone6用 start */
 @media (max-width: 1000px) {
@@ -63,6 +83,24 @@
   .date {
     font-size: 25px;
     /*text-align: right;*/
+  }
+  
+  .blockquote.reply_card {
+    display: inline-block;
+    padding: 16px;
+    /*max-width: 468px;*/
+    border: #ddd 1px solid;
+    border-top-color: #eee;
+    border-bottom-color: #bbb;
+    border-radius: 15px;
+    background-color: #FFF;
+    /*box-shadow: 6px 6px #444;*/
+    color: #666;
+    font-size: 40px;
+  }
+  
+  .reply_margin {
+    margin-top: 10px;
   }
   
 }
