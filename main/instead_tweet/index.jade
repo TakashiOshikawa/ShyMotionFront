@@ -9,18 +9,27 @@ html
     link(href='https://fonts.googleapis.com/css?family=Roboto:300' rel='stylesheet' type='text/css')
     link(href='https://fonts.googleapis.com/css?family=Fredoka+One' rel='stylesheet' type='text/css')
     script(type="application/javascript" src="./../top_assets/js/superagent.js")
-  body(onload="getTweetByInsteadID()" style="background-color: white;")
+  body(onload="initDisplay()")
+    img.header_line(src="./../top_assets/img/header_line.png")
     div.container
       a.font-white(href="http://127.0.0.1:4000")
         h1.shymotion-title(align="center") Shy Motion
       // Tweet Card
       div#tweet_message.row.margin-top-60
-        div.blockquote.twitter-tweet.col-xs-12.col-md-offset-3.col-md-6
-          h4.secret_nick_name From {{secret_nick_name}}
-            span.date {{date}}
-          p
-            span.twitter_user_id @{{twitter_user_id}}
-            {{body}}
+        a(href="")  
+          div.blockquote.twitter-tweet.col-xs-12.col-md-offset-3.col-md-6
+            h4.secret_nick_name From {{secret_nick_name}}
+              span.date {{date}}
+            p
+              span.twitter_user_id @{{twitter_user_id}}
+              {{body}}
+      // Reply Form
+      div.row
+        form#tweet_form.col-lg-offset-3.col-md-6.col-sm-12.col-xs-12
+          div.row.form-group
+            input#secret_nick_name.form-control.margin-top-60.big-input(type="text" placeholder="あなたのニックネームは？(任意)" name="secret_nick_name")
+            textarea#tweet_body.form-control.big-textarea(name="body" placeholder="返信しよう")
+            button.margin-10.big-input.shy-btn.col-xs-offset-8.col-xs-4.col-md-offset-4.col-md-4(onclick="postReplyToTweet({{instead_of_tweet_id}}); return false;" style="display:{{can_submit}};") 返信
       // Reply Card
       div#reply_messages.row.margin-top-60
         div(v-repeat="messages" style="color: black;")
@@ -29,15 +38,7 @@ html
               span.date {{date}}
             p
               {{body}}
-        p {{start_num}}
-        p {{length}}
-      // Reply Form
-      div.row
-        form#tweet_form.col-lg-offset-3.col-md-6.col-sm-12.col-xs-12
-          div.row.form-group
-            input#secret_nick_name.form-control.margin-top-60.big-input(type="text" placeholder="あなたのニックネームは？(任意)" name="secret_nick_name")
-            textarea#tweet_body.form-control.big-textarea(name="body" placeholder="返信しよう")
-            button.margin-10.big-input.shy-btn.col-xs-offset-8.col-xs-4.col-md-offset-4.col-md-4(onclick="postReplyToTweet({{instead_of_tweet_id}}); return false;" style="display:{{can_submit}};") 返信
+        button.margin-both-20.big-input.shy-btn.col-xs-12.col-md-offset-3.col-md-6.reload_reply(onclick="getReplyToTweet(); return false;" style="display:{{can_display}};") 読み込み
     // Scripts
     script(type="application/javascript" src="./../vue/src/vue.min.js")
     script(type="application/javascript" src="./../top_assets/css/bootstrap/js/jquery-1.10.2.min.js")

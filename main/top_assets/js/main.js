@@ -32,9 +32,9 @@ var postTweet = function() {
 	.type('form')
 	.send({ user_id: twitter_user_id, body: body, secret_nick_name: secret_nick_name })
 	.end(function(err, res){
-		console.log(res.text);//レスポンス
-		//レスポンスがJSONの場合 
-		console.log(res.body);//ここにparse済みのオブジェクトが入る
+		var parsed_tweet = JSON.parse(res.text);
+		// TODO URLは帰ってきた値に飛ぶ
+		window.location = 'http://127.0.0.1:4000/instead_tweet/' + parsed_tweet.tweet.instead_of_tweet_id;
 	});
 
 }
