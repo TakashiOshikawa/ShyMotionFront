@@ -26,7 +26,7 @@ html
           div.row.form-group
             input#twitter_user_id.form-control.margin-6.big-input(type="text" placeholder="@ツイートしたい相手のID" name="user_id")
             textarea#tweet_body.form-control.margin-top-60.big-textarea(name="body" placeholder="メッセージを入力してね")
-            a.col-xs-5.btn.big-btn.margin-top-40.shy-btn(href="http://localhost:4000/search_top")
+            a.col-xs-5.btn.big-btn.margin-top-40.shy-btn(href="http://127.0.0.1:4000/search_top")
               label.font-white ツイートを探す
             input.col-xs-offset-2.col-xs-5.btn.big-btn.margin-top-40.shy-btn(type="button" onclick="postTweet(); return false;" value="ツイート" )
     script(type="application/javascript" src="./vue/src/vue.min.js")

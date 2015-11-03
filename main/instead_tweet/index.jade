@@ -20,9 +20,8 @@ html
           div.blockquote.twitter-tweet.col-xs-12.col-md-offset-3.col-md-6
             h4.secret_nick_name From {{secret_nick_name}}
               span.date {{date}}
-            p
-              span.twitter_user_id @{{twitter_user_id}}
-              {{body}}
+            span.twitter_user_id @{{twitter_user_id}}
+            {{body}}
       // Reply Form
       div.row
         form#tweet_form.col-lg-offset-3.col-md-6.col-sm-12.col-xs-12
@@ -36,8 +35,7 @@ html
           div.blockquote.reply_card.reply_margin.col-xs-12.col-md-offset-3.col-md-6
             h4.secret_nick_name From {{secret_nick_name}}
               span.date {{date}}
-            p
-              {{body}}
+            {{body}}
         button.margin-both-20.big-input.shy-btn.col-xs-12.col-md-offset-3.col-md-6.reload_reply(onclick="getReplyToTweet(); return false;" style="display:{{can_display}};") 読み込み
     // Scripts
     script(type="application/javascript" src="./../vue/src/vue.min.js")

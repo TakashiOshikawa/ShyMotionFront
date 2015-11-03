@@ -83,6 +83,10 @@
     box-shadow: 3px 6px #ECEFF1;
     transition: background 0.9s, color 0.9s, font-size 0.6s;
   }
+  
+  .search_result_message {
+    font-size: 30px;
+  }
 }
 
 /* iPhone6用 start */
@@ -200,6 +204,9 @@
     box-shadow: 3px 6px #ECEFF1;
   }
   
+  .search_result_message {
+    font-size: 40px;
+  }
 }
 /* iPhone6用 end */
 
