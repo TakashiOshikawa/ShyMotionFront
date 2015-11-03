@@ -94,8 +94,7 @@ var seachTweetByUserID = function (twitter_user_id, reset) {
 	                      search_form.twitter_user_id + '/' +
 						  instead_tweets.start_num + '/' +
 						  instead_tweets.length;
-	
-	console.log(url);
+
 	
 	request
 	.get(url)
