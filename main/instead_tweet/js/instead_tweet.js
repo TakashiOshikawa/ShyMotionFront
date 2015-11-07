@@ -1,6 +1,5 @@
 'use strict';
 
-var BASE_URL = 'http://127.0.0.1:8080/';
 
 var request = window.superagent;
 
@@ -34,7 +33,7 @@ var getTweetByInsteadID = function () {
 	
 	var current_url = location.href;
 	var instead_of_tweet_id = current_url.match(/.*\/(\d{1,11})/);	
-	var url = BASE_URL + "tweet/" + instead_of_tweet_id[1];
+	var url = BACK_BASE_URL + "tweet/" + instead_of_tweet_id[1];
 	tweet_message.instead_of_tweet_id = instead_of_tweet_id[1];
 
 	request
@@ -67,7 +66,7 @@ var postReplyToTweet = function (instead_of_tweet_id) {
 	var body = document.getElementById('tweet_body');
 	var secret_nick_name = document.getElementById('secret_nick_name');
 
-	var url = BASE_URL + 'reply/' + instead_of_tweet_id; 
+	var url = BACK_BASE_URL + 'reply/' + instead_of_tweet_id; 
 
 	request
 	.post(url)
@@ -91,7 +90,7 @@ var postReplyToTweet = function (instead_of_tweet_id) {
 
 
 var getReplyToTweet = function () {
-	var url = BASE_URL + 'reply/' + 
+	var url = BACK_BASE_URL + 'reply/' + 
 	            tweet_message.instead_of_tweet_id + "/" +
 				reply_messages.start_num + "/" +
 				reply_messages.length;

@@ -12,7 +12,7 @@ html
   body
     img.header_line(src="./../top_assets/img/header_line.png")
     div.container
-      a.font-white(href="http://127.0.0.1:4000")
+      a.url.font-white(href="{{FRONT_BASE_URL}}")
         h1.shymotion-title(align="center") Shy Motion
       // Search Form
       div.row
@@ -37,4 +37,5 @@ html
     script(type="application/javascript" src="./../vue/src/vue.min.js")
     script(type="application/javascript" src="./../top_assets/css/bootstrap/js/jquery-1.10.2.min.js")
     script(type="application/javascript" src="./../top_assets/css/bootstrap/js/bootstrap.js")
+    script(type="application/javascript" src="./../top_assets/js/env.js")
     script(type="application/javascript" src="./js/search_top.js")

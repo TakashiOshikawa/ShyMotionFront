@@ -8,11 +8,10 @@ html
     link(href='https://fonts.googleapis.com/css?family=Roboto:300' rel='stylesheet' type='text/css')
     link(href='https://fonts.googleapis.com/css?family=Fredoka+One' rel='stylesheet' type='text/css')
     script(type="application/javascript" src="./top_assets/js/superagent.js")
-    script(type="application/javascript" src="./top_assets/js/main.js")
   body
     img.header_line(src="./../top_assets/img/header_line.png")
     div.container
-      a.font-white(href="http://127.0.0.1:4000")
+      a.url.font-white(href="{{FRONT_BASE_URL}}")
         h1.shymotion-title(align="center") Shy Motion
       div.row.main-message-margin
         span.span-font-size.col-md-offset-4 ちょっとした恥ずかしがり屋さん
@@ -26,10 +25,12 @@ html
           div.row.form-group
             input#twitter_user_id.form-control.margin-6.big-input(type="text" placeholder="@ツイートしたい相手のID" name="user_id")
             textarea#tweet_body.form-control.margin-top-60.big-textarea(name="body" placeholder="メッセージを入力してね")
-            a.col-xs-5.btn.big-btn.margin-top-40.shy-btn(href="http://127.0.0.1:4000/search_top")
+            a.col-xs-5.btn.big-btn.margin-top-40.shy-btn(href="./search_top")
               label.font-white ツイートを探す
             input.col-xs-offset-2.col-xs-5.btn.big-btn.margin-top-40.shy-btn(type="button" onclick="postTweet(); return false;" value="ツイート" )
     script(type="application/javascript" src="./vue/src/vue.min.js")
     script(type="application/javascript" src="./vue/src/js/data_test.js")
     script(type="application/javascript" src="./top_assets/css/bootstrap/js/jquery-1.10.2.min.js")
     script(type="application/javascript" src="./top_assets/css/bootstrap/js/bootstrap.js")
+    script(type="application/javascript" src="./top_assets/js/env.js")
+    script(type="application/javascript" src="./top_assets/js/main.js")

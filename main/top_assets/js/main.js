@@ -1,12 +1,11 @@
 'use strict';
 
 
-var BASE_URL = 'http://127.0.0.1:8080/';
 var request = window.superagent;
 
 var getTweet = function () {
 	
-	var url = BASE_URL + "reply/1/1/10";
+	var url = BACK_BASE_URL + "reply/1/1/10";
 
 	request
 	.get(url)
@@ -25,7 +24,7 @@ var postTweet = function() {
 	// TODO secret_nick_nameを入力させる
 	var secret_nick_name = 'test nick name';
 	
-	var url = BASE_URL + 'tweet';
+	var url = BACK_BASE_URL + 'tweet';
 	
 	request
 	.post(url)
@@ -34,7 +33,7 @@ var postTweet = function() {
 	.end(function(err, res){
 		var parsed_tweet = JSON.parse(res.text);
 		// TODO URLは帰ってきた値に飛ぶ
-		window.location = 'http://127.0.0.1:4000/instead_tweet/' + parsed_tweet.tweet.instead_of_tweet_id;
+		window.location = FRONT_BASE_URL + 'instead_tweet/' + parsed_tweet.tweet.instead_of_tweet_id;
 	});
 
 }

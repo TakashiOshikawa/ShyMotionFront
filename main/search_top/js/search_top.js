@@ -1,7 +1,5 @@
 'use strict';
 
-var BASE_URL  = 'http://127.0.0.1:8080/';
-var FRONT_URL = 'http://127.0.0.1:4000/';
 
 var request = window.superagent;
 
@@ -90,7 +88,7 @@ var seachTweetByUserID = function (twitter_user_id, reset) {
 	
 	if ( reset == true ) initTweetSearchData();
 	
-	var url = BASE_URL + 'tweetbyuserid/' +
+	var url = BACK_BASE_URL + 'tweetbyuserid/' +
 	                      search_form.twitter_user_id + '/' +
 						  instead_tweets.start_num + '/' +
 						  instead_tweets.length;
@@ -117,7 +115,7 @@ var seachTweetByUserID = function (twitter_user_id, reset) {
 		  var secret_nick_name     = parsed_tweets[n].secret_nick_name;
 		  var body                 = parsed_tweets[n].body;
 		  var date                 = timestampToDateTime(parsed_tweets[n].created_at);
-		  var instead_tweet_url    = FRONT_URL + 'instead_tweet/' + instead_of_tweet_id
+		  var instead_tweet_url    = FRONT_BASE_URL + 'instead_tweet/' + instead_of_tweet_id
 		  var tweet = new InsteadTweet(twitter_user_id, instead_of_tweet_id, secret_nick_name, body, date, instead_tweet_url);
 		  
 		  result_message.search_twitter_user_id  = twitter_user_id;
