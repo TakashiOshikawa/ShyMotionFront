@@ -66,25 +66,31 @@ var postReplyToTweet = function (instead_of_tweet_id) {
 	var body = document.getElementById('tweet_body');
 	var secret_nick_name = document.getElementById('secret_nick_name');
 
-	var url = BACK_BASE_URL + 'reply/' + instead_of_tweet_id; 
+	var url = BACK_BASE_URL + 'reply/' + instead_of_tweet_id;
 
-	request
-	.post(url)
-	.type('form')
-	.send({ body: body.value, secret_nick_name: secret_nick_name.value })
-	.end(function(err, res){
-		var parsed_reply = JSON.parse(res.text);
+	// validate	
+	var check_flg = inputLengthValidation(secret_nick_name.value, 15, '※ニックネームは15文字以内で入力してね', true);
+	check_flg = check_flg == true ? inputLengthValidation(body.value, 140, '※返信は140文字以内で入力してね', check_flg) : false;
 
-		var secret_nick_name  = parsed_reply.secret_nick_name;
-		var body              = parsed_reply.body;
-		var date              = timestampToDateTime(parsed_reply.created_at);
-		var message = new Message(0, secret_nick_name, body, date);
-
-		addMessage(message, 'post_reply');
-		
-		document.getElementById('tweet_body').value = '';
-
-	});
+    if ( check_flg == true ) {
+		request
+		.post(url)
+		.type('form')
+		.send({ body: body.value, secret_nick_name: secret_nick_name.value })
+		.end(function(err, res){
+			var parsed_reply = JSON.parse(res.text);
+	
+			var secret_nick_name  = parsed_reply.secret_nick_name;
+			var body              = parsed_reply.body;
+			var date              = timestampToDateTime(parsed_reply.created_at);
+			var message = new Message(0, secret_nick_name, body, date);
+	
+			addMessage(message, 'post_reply');
+			
+			document.getElementById('tweet_body').value = '';
+	
+		});
+	}
 	
 }
 

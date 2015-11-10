@@ -22,11 +22,13 @@ html
               span.date {{date}}
             span.twitter_user_id @{{twitter_user_id}}
             {{body}}
+      span.margin-bottom-40 　
       // Reply Form
       div.row
+        p#validate_message.span-font-size(style="display: {{can_display}};" align="center") {{message}}
         form#tweet_form.col-lg-offset-3.col-md-6.col-sm-12.col-xs-12
           div.row.form-group
-            input#secret_nick_name.form-control.margin-top-60.big-input(type="text" placeholder="あなたのニックネームは？(任意)" name="secret_nick_name")
+            input#secret_nick_name.form-control.margin-both-20.big-input(type="text" placeholder="あなたのニックネームは？(任意)" name="secret_nick_name")
             textarea#tweet_body.form-control.big-textarea(name="body" placeholder="返信しよう")
             button.margin-10.big-input.shy-btn.col-xs-offset-8.col-xs-4.col-md-offset-4.col-md-4(onclick="postReplyToTweet({{instead_of_tweet_id}}); return false;" style="display:{{can_submit}};") 返信
       // Reply Card
@@ -42,4 +44,5 @@ html
     script(type="application/javascript" src="./../top_assets/css/bootstrap/js/jquery-1.10.2.min.js")
     script(type="application/javascript" src="./../top_assets/css/bootstrap/js/bootstrap.js")
     script(type="application/javascript" src="./../top_assets/js/env.js")
+    script(type="application/javascript" src="./../top_assets/js/validation.js")
     script(type="application/javascript" src="./js/instead_tweet.js")

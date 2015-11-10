@@ -21,6 +21,7 @@ html
         span.span-font-size.col-md-offset-4 伝えるよ!
         h2.margin-top-80.col-md-offset-4.font-size-40-per 君もツイートしてみよう
       div.row
+        p#validate_message.span-font-size(style="display: {{can_display}};" align="center") {{message}}
         form#tweet_form.col-lg-offset-3.col-md-6.col-sm-12.col-xs-12
           div.row.form-group
             input#twitter_user_id.form-control.margin-6.big-input(type="text" placeholder="@ツイートしたい相手のID" name="user_id")
@@ -33,4 +34,5 @@ html
     script(type="application/javascript" src="./top_assets/css/bootstrap/js/jquery-1.10.2.min.js")
     script(type="application/javascript" src="./top_assets/css/bootstrap/js/bootstrap.js")
     script(type="application/javascript" src="./top_assets/js/env.js")
+    script(type="application/javascript" src="./top_assets/js/validation.js")
     script(type="application/javascript" src="./top_assets/js/main.js")
