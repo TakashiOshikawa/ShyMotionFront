@@ -25,7 +25,8 @@ html
         form#tweet_form.col-lg-offset-3.col-md-6.col-sm-12.col-xs-12
           div.row.form-group
             input#twitter_user_id.form-control.margin-6.big-input(type="text" placeholder="@ツイートしたい相手のID" name="user_id")
-            textarea#tweet_body.form-control.margin-top-60.big-textarea(name="body" placeholder="メッセージを入力してね")
+            input#secret_nickname.form-control.margin-top-10.big-input(type="text" placeholder="あなたのニックネーム(任意)" name="secret_nickname")
+            textarea#tweet_body.form-control.margin-top-40.big-textarea(name="body" placeholder="メッセージを入力してね")
             a.col-xs-5.btn.big-btn.margin-top-40.shy-btn(href="./search_top")
               label.font-white ツイートを探す
             input.col-xs-offset-2.col-xs-5.btn.big-btn.margin-top-40.shy-btn(type="button" onclick="postTweet(); return false;" value="ツイート" )
